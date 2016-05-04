@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AppFidelidade</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ola_diogo">Olá Diogo!</string>
+
+    <string name="novissimo">Novíssimo texto</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="lbl_login">Login</string>
+    <string name="lbl_senha">Senha</string>
+    <string name="lbl_sair">Sair</string>
+    <string name="btn_logar">Logar</string>
+    <string name="title_activity_pessoa">PessoaActivity</string>
+    <string name="title_activity_cliente">ClienteActivity</string>
+    <string name="title_activity_mapa">Map</string>
+</resources>

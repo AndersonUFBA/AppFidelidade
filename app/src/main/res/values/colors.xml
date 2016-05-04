@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="txt_padrao">#0c0c4d</color>
+    <color name="bg_color">#effcc8</color>
+    <color name="bg_toast">#6dc729</color>
+    <color name="bg_action">#fc7952</color>
+    <color name="primary_sucesso">#8cc53e</color>
+    <color name="primary_info">#52c5b9</color>
+    <color name="primary_error">#ff081e</color>
+    <color name="primary_alert">#ffae41</color>
+
+    <color name="branco">#fff</color>
+
+</resources>
