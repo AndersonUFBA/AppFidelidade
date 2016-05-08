@@ -11,9 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import nog.com.br.appfidelidade.util.TipoMsg;
-import nog.com.br.appfidelidade.util.Util;
-
 public class ClienteActivity extends AppCompatActivity {
 
     private Button btnListPonto;
@@ -31,7 +28,7 @@ public class ClienteActivity extends AppCompatActivity {
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ClienteActivity.this, MapaActivity.class);
+                Intent i = new Intent(ClienteActivity.this, MapaLocalizacaoActivity.class);
                 startActivity(i);
                 finish();
             }

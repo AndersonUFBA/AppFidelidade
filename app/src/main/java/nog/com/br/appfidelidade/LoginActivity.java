@@ -55,6 +55,10 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
 
+        Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
+        startActivity(i);
+        finish();
+
         edtLogin = (EditText) findViewById(R.id.edtLogin);
         edtSenha = (EditText) findViewById(R.id.edtSenha);
 

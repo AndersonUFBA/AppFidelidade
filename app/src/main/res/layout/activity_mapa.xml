@@ -15,4 +15,4 @@
     map:uiScrollGestures="false"
     map:uiTiltGestures="true"
     map:uiZoomControls="false"
-    map:uiZoomGestures="true"/>    <!--tools:context="nog.com.br.appfidelidade.MapaActivity" />-->
+    map:uiZoomGestures="true"/>    <!--tools:context="nog.com.br.appfidelidade.activity_mapaLocalizacaoaLocalizacao" />-->
