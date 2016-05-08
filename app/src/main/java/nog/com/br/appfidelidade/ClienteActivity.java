@@ -14,7 +14,8 @@ import android.widget.Button;
 public class ClienteActivity extends AppCompatActivity {
 
     private Button btnListPonto;
-   private Button btnMapa;
+     private Button btnMapa;
+    private Button btnMapa2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,16 @@ public class ClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ClienteActivity.this, MapaLocalizacaoActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        btnMapa2 = (Button) findViewById(R.id.btnMapa2);
+        btnMapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ClienteActivity.this, MapaActivity.class);
                 startActivity(i);
                 finish();
             }
