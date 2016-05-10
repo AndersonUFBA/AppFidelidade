@@ -66,6 +66,7 @@ public class EmpresaActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences("pref", Context.MODE_PRIVATE).edit();
                 editor.remove("login");
                 editor.remove("senha");
+                editor.remove("modo");
                 editor.commit();
                 break;
         }

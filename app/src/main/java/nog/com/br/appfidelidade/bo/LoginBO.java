@@ -46,6 +46,7 @@ public class LoginBO {
                 SharedPreferences.Editor editor = validation.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE).edit();
                 editor.putString("login", validation.getLogin());
                 editor.putString("senha", validation.getSenha());
+                editor.putInt("modo",validation.getModo());
 
 
                 editor.commit();

@@ -45,7 +45,7 @@ public class LoginRepository extends SQLiteOpenHelper{
 
     public void listarLogins(Activity activity) {
         SQLiteDatabase db = getReadableDatabase();//método para ler
-        Cursor cursor = db.query("TB_LOGIN", null, null, null, null, null, "USUARIO"); //AULA 28 16:00
+        Cursor cursor = db.query("TB_LOGIN", null, null, null, null, null, "USUARIO");
 
 
         while (cursor.moveToNext()) {

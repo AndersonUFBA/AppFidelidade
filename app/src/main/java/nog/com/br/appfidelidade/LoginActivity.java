@@ -21,12 +21,13 @@ import nog.com.br.appfidelidade.validation.LoginValidation;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Spinner spnModo;
+
     private EditText edtLogin;
     private EditText edtSenha;
 
 
-    private Button btnLogar;
+    private Button btnLogar, btnNova;
+    private RadioGroup rbgModo;
     private SharedPreferences preferences;
 
     private LoginBO loginBO;
@@ -37,20 +38,23 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         loginBO = new LoginBO(this);
-
         getSupportActionBar().hide();
+        rbgModo = (RadioGroup) findViewById(R.id.rbgModo);
 
         preferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
 
-        //capturando o login e senha salvos no dispositivo
-        //spnModo = (Spinner) findViewById(R.id.spnModo);
-        //final String modo = spnModo.toString();
         String login = preferences.getString("login",null);
         String senha = preferences.getString("senha", null);
+        int modo = preferences.getInt("modo", 0);
+
 
         //caso exista login e senha salvos é altorizado a passar para proxima activity
-        if (login != null && senha != null){
+        if (login != null && senha != null && modo == 0){
             Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
+            startActivity(i);
+            finish();
+        }else if (login != null && senha != null && modo == 1){
+            Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
             startActivity(i);
             finish();
         }
@@ -61,19 +65,6 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogar = (Button) findViewById(R.id.btnLogar);
 
-       /* btnLogar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(modo == "Clinete){
-                    Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
-                    startActivity(i);
-                }else {
-
-                    Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
-                    startActivity(i);
-                }
-            }
-        });*/
 
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,37 +72,54 @@ public class LoginActivity extends AppCompatActivity {
                 String login = edtLogin.getText().toString();
                 String senha = edtSenha.getText().toString();
 
+                int modo = 0;
+
+                switch (rbgModo.getCheckedRadioButtonId()) {
+                    case R.id.rbtCliente:
+                      modo = 0;
+                        break;
+                    case R.id.rbtEmpresa:
+                        modo = 1;
+                        break;
+                }
+
 
 
                 LoginValidation validation = new LoginValidation();
                 validation.setActivity(LoginActivity.this);
                 validation.setEdtLogin(edtLogin);
                 validation.setEdtSenha(edtSenha);
+                validation.setRbtmodo(rbgModo);
                 validation.setLogin(login);
                 validation.setSenha(senha);
+                validation.setModo(rbgModo.getCheckedRadioButtonId());
 
 
 
                 boolean isValido = loginBO.validarCamposLogin(validation);
-                if (isValido){
+                if (isValido && modo == 0){
                     Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
+                    startActivity(i);
+                    finish(); //mata a activity atual
+                }else if (isValido && modo == 1){
+                    Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
                     startActivity(i);
                     finish(); //mata a activity atual
                 }
             }
         });
-       // this.initModo();
+
+        btnNova = (Button) findViewById(R.id.btnNova);
+        btnNova.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, PessoaActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+
     }
-   /* private void initModo(){
 
-        ArrayList<String> modos = new ArrayList<>();
-
-        for (Modo p : Modo.values()){
-            modos.add(p.getDescricao());
-        }
-
-        ArrayAdapter adapter = new ArrayAdapter(LoginActivity.this, android.R.layout.simple_spinner_item, modos);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnModo.setAdapter(adapter);
-    }*/
 }

@@ -3,6 +3,7 @@ package nog.com.br.appfidelidade.validation;
 import android.app.Activity;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 /**
  * Created by andersonnogueira on 03/05/16.
@@ -10,30 +11,31 @@ import android.widget.RadioButton;
 public class LoginValidation {
     private String login;
     private String senha;
-    private String modo;
+    private int modo;
+    private EditText edtSenha;
+    private RadioGroup rbtmodo;
+
+    private Activity activity;
 
     private EditText edtLogin;
 
-    public String getModo() {
+    public int getModo() {
         return modo;
     }
 
-    public void setModo(String modo) {
+    public void setModo(int modo) {
         this.modo = modo;
     }
 
-    public RadioButton getRbtmodo() {
+    public RadioGroup getRbtmodo() {
         return rbtmodo;
     }
 
-    public void setRbtmodo(RadioButton rbtmodo) {
+    public void setRbtmodo(RadioGroup rbtmodo) {
         this.rbtmodo = rbtmodo;
     }
 
-    private EditText edtSenha;
-    private RadioButton rbtmodo;
 
-    private Activity activity;
 
     public String getLogin() {
         return login;

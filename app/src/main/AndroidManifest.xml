@@ -44,7 +44,9 @@
         <activity android:name=".EmpresaActivity" />
         <activity android:name=".ListarClientesActivity" />
         <activity android:name=".BonificacaoActivity" />
-        <activity android:name=".InserirPontuacaoActivity"></activity>
+        <activity android:name=".InserirPontuacaoActivity" />
+        <activity android:name=".PessoaActivity" />
+        <activity android:name=".ListaPessoaActivity"></activity>
     </application>
 
 </manifest>
