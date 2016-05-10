@@ -29,7 +29,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bonificar Clinte"
+        android:text="Bonificar Cliente"
         android:id="@+id/btnBonificar"
         android:layout_below="@+id/btnInserirPontos"
         android:layout_centerHorizontal="true"
