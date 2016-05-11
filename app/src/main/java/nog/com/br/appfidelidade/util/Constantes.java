@@ -6,5 +6,5 @@ package nog.com.br.appfidelidade.util;
 public class Constantes {
     public static final String BD_NOME = "app-fidelidade";
 
-    public static final int BD_VERSAO = 4;
+    public static final int BD_VERSAO = 5;
 }

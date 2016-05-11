@@ -42,6 +42,9 @@ public class PessoaRepository extends SQLiteOpenHelper {
     }
 
     public void salvarPessoa(Pessoa pessoa) {
+
+
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("NOME", pessoa.getNome());
@@ -55,6 +58,15 @@ public class PessoaRepository extends SQLiteOpenHelper {
                 break;
         }
 
+        StringBuilder query = new StringBuilder();
+        query.append("CREATE TABLE IF NOT EXISTS TB_PESSOA( ");
+        query.append(" ID_PESSOA INTEGER PRIMARY KEY AUTOINCREMENT,");
+        query.append(" NOME TEXT(30) NOT NULL,");
+        query.append(" ENDERECO TEXT(50),");
+        query.append(" CPF TEXT(14),");
+        query.append(" CNPJ TEXT(14))");
+
+        db.execSQL(query.toString());
 
         db.insert("TB_PESSOA", null, contentValues);
     }

@@ -7,33 +7,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="nog.com.br.appfidelidade.ClienteActivity">
+    tools:context="nog.com.br.appfidelidade.ClienteActivity"
+    style="@style/fundo"
+    >
+
 
     <Button
+        style="@style/botoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Listar Pontuação"
         android:id="@+id/btnListPonto"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="165dp" />
+        android:layout_marginTop="165dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
+        style="@style/botoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mapa"
         android:id="@+id/btnMapa"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="62dp"
         android:layout_below="@+id/btnListPonto"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
     <Button
+        style="@style/botoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ver no mapa"
         android:id="@+id/btnMapa2"
         android:layout_marginTop="49dp"
         android:layout_below="@+id/btnMapa"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -14,6 +14,7 @@ import nog.com.br.appfidelidade.util.Util;
  * Created by andersonnogueira on 03/05/16.
  */
 public class LoginRepository extends SQLiteOpenHelper{
+
     public LoginRepository(Context context) {
         super(context, Constantes.BD_NOME, null, Constantes.BD_VERSAO);
     }
@@ -28,6 +29,8 @@ public class LoginRepository extends SQLiteOpenHelper{
 
         db.execSQL(query.toString());
         popularBD(db);
+
+
 
     }
 

@@ -20,6 +20,17 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="botoes">
+        <item name="android:background">@color/vermelho</item>
+        <item name="android:bottomRightRadius">@dimen/margin_widgets</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="fundo">
+        <item name="android:background">@color/cinza</item>
+    </style>
+
+
     <style name="Txt_Teste">
         <item name="android:textSize">@dimen/texto_padrao</item>
         <item name="android:layout_marginBottom">@dimen/margin_widgets</item>
@@ -51,7 +62,6 @@
     <style name="AppTheme.Dark.Dialog.Alert" parent="Theme.AppCompat.Dialog">
         <item name="colorAccent">@color/branco</item>
         <item name="android:textColorPrimary">@color/branco</item>
-        <item name="android:background">@color/primary_alert</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

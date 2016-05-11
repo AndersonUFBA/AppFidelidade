@@ -7,7 +7,9 @@
     <color name="primary_sucesso">#8cc53e</color>
     <color name="primary_info">#52c5b9</color>
     <color name="primary_error">#ff081e</color>
-    <color name="primary_alert">#ffae41</color>
+    <color name="vermelho">#e74c3c</color>
+    <color name="cinza">#95a5a6</color>
+
 
     <color name="branco">#fff</color>
 

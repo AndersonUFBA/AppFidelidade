@@ -25,13 +25,14 @@ package nog.com.br.appfidelidade;
          import nog.com.br.appfidelidade.entidade.TipoPessoa;
          import nog.com.br.appfidelidade.repository.PessoaRepository;
          import nog.com.br.appfidelidade.util.Mask;
+         import nog.com.br.appfidelidade.util.Util;
 
 public class PessoaActivity extends AppCompatActivity {
 
-    private Spinner spnProfissao;
+
     private TextView txtCpfCnpj;
-    private EditText edtNome, edtEndereco, edtCpfCnpj, edtNasc;
-    private RadioGroup rbgCpfCnpj, rbgSexo;
+    private EditText edtNome, edtEndereco, edtCpfCnpj;
+    private RadioGroup rbgCpfCnpj;
     private RadioButton rbtCpf;
     private TextWatcher cpfMask, cnpjMask;
 
@@ -104,7 +105,8 @@ public class PessoaActivity extends AppCompatActivity {
             Intent i = new Intent(this, ListaPessoaActivity.class);
             startActivity(i);
             finish();
-            //Util.showMsgToast(this, "Cadastro ok!");
+            Util.showMsgToast(this, "Cadastro ok!");
+
         }
     }
 
