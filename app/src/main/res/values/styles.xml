@@ -20,6 +20,26 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="texto">
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+    <style name="caixa_cinza">
+        <item name="android:background">@color/cinza</item>
+        <item name="android:paddingBottom">20dp</item>
+    </style>
+
+    <style name="botao_azul">
+        <item name="android:background">@color/azul</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <style name="botao_verde">
+        <item name="android:background">@color/verde</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
     <style name="botoes">
         <item name="android:background">@color/vermelho</item>
         <item name="android:bottomRightRadius">@dimen/margin_widgets</item>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +12,9 @@
     tools:context="nog.com.br.appfidelidade.BonificacaoActivity"
     >
     <TextView
+        style="@style/texto"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Id do Cliente"
@@ -19,6 +24,7 @@
         android:layout_alignStart="@+id/btnBon1" />
 
     <EditText
+        style="@style/caixa_cinza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
@@ -26,30 +32,38 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        style="@style/botoes"
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bonificar"
         android:id="@+id/btnBon1"
-        android:layout_marginTop="117dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView2" />
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="48dp"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
+        style="@style/texto"
+        android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valor"
         android:id="@+id/textView2"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="54dp"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
+        android:layout_marginBottom="20dp"
+        style="@style/caixa_cinza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
         android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

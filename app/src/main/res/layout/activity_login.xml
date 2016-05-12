@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:background="@drawable/background"
+    android:paddingTop="135dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,39 +20,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nog.com.br.appfidelidade.Login">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/images"/>
-
     <TextView
+        android:textColor="@color/branco"
         style="@style/Txt_Teste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lbl_login" />
 
     <EditText
+        style="@style/caixa_cinza"
         android:id="@+id/edtLogin"
-        style="@style/Edt_Estilo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
 
     <TextView
         style="@style/Txt_Teste"
+        android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lbl_senha" />
 
     <EditText
         android:id="@+id/edtSenha"
-        style="@style/Edt_Estilo"
+        style="@style/caixa_cinza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword" />
 
     <TextView
-
+        android:textColor="@color/branco"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modo: "/>
@@ -64,32 +67,45 @@
         android:id="@+id/rbgModo">
 
         <RadioButton
+            android:textColor="@color/branco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cliente"
             android:id="@+id/rbtCliente"
             android:checked="true"/>
         <RadioButton
+            android:textColor="@color/branco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Empresa"
             android:id="@+id/rbtEmpresa"/>
     </RadioGroup>
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+        <Button
+            style="@style/botao_azul"
+            android:layout_marginLeft="70dp"
+            android:id="@+id/btnLogar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_logar"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnNova" />
     <Button
-        style="@style/botoes"
-        android:id="@+id/btnLogar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="@string/btn_logar" />
-
-    <Button
-        android:background="#27ae60"
+        style="@style/botao_verde"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textAlignment="center"
         android:id="@+id/btnNova"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Criar conta" />
+        android:text="Criar conta"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
 </LinearLayout>
 </ScrollView>

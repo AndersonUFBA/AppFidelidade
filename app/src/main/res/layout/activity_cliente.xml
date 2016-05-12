@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,32 +9,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="nog.com.br.appfidelidade.ClienteActivity"
-    style="@style/fundo"
-    >
-
-
+    tools:context="nog.com.br.appfidelidade.ClienteActivity"    >
     <Button
-        style="@style/botoes"
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Listar Pontuação"
         android:id="@+id/btnListPonto"
+        android:layout_marginTop="119dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="165dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        style="@style/botoes"
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mapa"
         android:id="@+id/btnMapa"
-        android:layout_marginTop="62dp"
-        android:layout_below="@+id/btnListPonto"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -40,7 +37,7 @@
 
 
     <Button
-        style="@style/botoes"
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ver no mapa"
