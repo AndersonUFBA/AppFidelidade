@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <TextView
+        style="@style/texto"
+        android:layout_marginTop="80px"
+        android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Id do Cliente"
@@ -11,12 +17,16 @@
         android:layout_gravity="center_horizontal" />
 
     <EditText
-        android:layout_width="match_parent"
+        style="@style/caixa_cinza"
+        android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
         android:layout_gravity="center_horizontal" />
 
     <TextView
+        style="@style/texto"
+        android:layout_marginTop="80px"
+        android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valor da compra"
@@ -24,7 +34,8 @@
         android:layout_gravity="center_horizontal" />
 
     <EditText
-        android:layout_width="match_parent"
+        style="@style/caixa_cinza"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -32,10 +43,11 @@
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
+        style="@style/botao_azul"
+        android:layout_marginTop="80px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Inserir Valor"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/button" />
 
 </LinearLayout>

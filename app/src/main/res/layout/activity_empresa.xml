@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,28 +12,40 @@
     tools:context="nog.com.br.appfidelidade.EmpresaActivity">
 
     <Button
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Listar Clientes"
         android:id="@+id/btnListarClientes"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="109dp" />
+        android:layout_marginTop="109dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Inserir Pontuação"
         android:id="@+id/btnInserirPontos"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/btnListarClientes"
+        android:layout_alignEnd="@+id/btnListarClientes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
+        style="@style/botao_azul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bonificar Cliente"
         android:id="@+id/btnBonificar"
         android:layout_below="@+id/btnInserirPontos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:layout_marginTop="62dp"
+        android:layout_alignRight="@+id/btnInserirPontos"
+        android:layout_alignEnd="@+id/btnInserirPontos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

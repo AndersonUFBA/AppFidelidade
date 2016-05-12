@@ -1,4 +1,7 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:paddingTop="100dp"
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,35 +18,44 @@
         tools:context="com.example.testeeclipse.PessoaActivity">
 
         <TextView
-            style="@style/Txt_Teste"
+            android:layout_marginBottom="10dp"
+            style="@style/texto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nome:" />
 
         <EditText
+            android:layout_marginBottom="20dp"
+            style="@style/caixa_cinza"
             android:id="@+id/edtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            style="@style/Txt_Teste"
+            style="@style/texto"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Endereço:" />
 
         <EditText
+            android:layout_marginBottom="20dp"
+            style="@style/caixa_cinza"
             android:id="@+id/edtEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/txtCpfCnpj"
-            style="@style/Txt_Teste"
+            style="@style/texto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CPF:" />
 
         <EditText
+            android:layout_marginBottom="20dp"
+            style="@style/caixa_cinza"
             android:id="@+id/edtCpfCnpj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,6 +68,7 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:textColor="@color/branco"
                 android:id="@+id/rbtCpf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,6 +76,7 @@
                 android:text="CPF" />
 
             <RadioButton
+                android:textColor="@color/branco"
                 android:id="@+id/rbtCnpj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,6 +84,8 @@
         </RadioGroup>
 
         <Button
+            style="@style/botao_azul"
+            android:layout_marginTop="20dp"
             android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
