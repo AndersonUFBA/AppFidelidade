@@ -24,22 +24,10 @@ public class PessoaRepository extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        StringBuilder query = new StringBuilder();
-        query.append("CREATE TABLE IF NOT EXISTS TB_PESSOA( ");
-        query.append(" ID_PESSOA INTEGER PRIMARY KEY AUTOINCREMENT,");
-        query.append(" NOME TEXT(30) NOT NULL,");
-        query.append(" ENDERECO TEXT(50),");
-        query.append(" CPF TEXT(14),");
-        query.append(" CNPJ TEXT(14))");
-
-        db.execSQL(query.toString());
-    }
+    public void onCreate(SQLiteDatabase db) {}
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        onCreate(db);
-    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
 
     public void salvarPessoa(Pessoa pessoa) {
 

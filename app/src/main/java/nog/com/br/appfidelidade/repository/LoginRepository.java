@@ -25,7 +25,22 @@ public class LoginRepository extends SQLiteOpenHelper{
         query.append("CREATE TABLE TB_LOGIN(");
         query.append("ID_LOGIN INTEGER PRIMARY KEY AUTOINCREMENT,");
         query.append("USUARIO TEXT(15) NOT NULL,");
-        query.append("SENHA TEXT(15) NOT NULL)");
+        query.append("SENHA TEXT(15) NOT NULL);");
+
+        query.append("CREATE TABLE  TB_PESSOA( ");
+        query.append(" ID_PESSOA INTEGER PRIMARY KEY AUTOINCREMENT,");
+        query.append(" NOME TEXT(30) NOT NULL,");
+        query.append(" ENDERECO TEXT(50),");
+        query.append(" CPF TEXT(14),");
+        query.append(" CNPJ TEXT(14),");
+        query.append(" LATITUDE DOUBLE,");
+        query.append(" LONGITUDE DOUBLE);");
+
+        query.append("CREATE TABLE  TB_PONTUACAO( ");
+        query.append(" ID_PONTUACAO INTEGER PRIMARY KEY AUTOINCREMENT,");
+        query.append(" CPF_COMP TEXT(14),");
+        query.append(" CNPJ_VEND TEXT(14),");
+        query.append(" PONTUACAO DOUBLE)");
 
         db.execSQL(query.toString());
         popularBD(db);
