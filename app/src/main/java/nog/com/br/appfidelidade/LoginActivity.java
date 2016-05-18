@@ -15,8 +15,10 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
+import nog.com.br.appfidelidade.async.AsyncUsuario;
 import nog.com.br.appfidelidade.bo.LoginBO;
 import nog.com.br.appfidelidade.entidade.Modo;
+import nog.com.br.appfidelidade.service.LoginService;
 import nog.com.br.appfidelidade.validation.LoginValidation;
 
 public class LoginActivity extends AppCompatActivity {
@@ -30,14 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     private RadioGroup rbgModo;
     private SharedPreferences preferences;
 
-    private LoginBO loginBO;
+    private LoginService loginService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginBO = new LoginBO(this);
+        loginService = new LoginService();
         getSupportActionBar().hide();
         rbgModo = (RadioGroup) findViewById(R.id.rbgModo);
 
@@ -48,16 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         int modo = preferences.getInt("modo", 0);
 
 
-        //caso exista login e senha salvos é altorizado a passar para proxima activity
-        if (login != null && senha != null && modo == 0){
-            Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
-            startActivity(i);
-            finish();
-        }else if (login != null && senha != null && modo == 1){
-            Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
-            startActivity(i);
-            finish();
-        }
 
         edtLogin = (EditText) findViewById(R.id.edtLogin);
         edtSenha = (EditText) findViewById(R.id.edtSenha);
@@ -72,40 +64,14 @@ public class LoginActivity extends AppCompatActivity {
                 String login = edtLogin.getText().toString();
                 String senha = edtSenha.getText().toString();
 
-                int modo = 0;
-
-                switch (rbgModo.getCheckedRadioButtonId()) {
-                    case R.id.rbtCliente:
-                      modo = 0;
-                        break;
-                    case R.id.rbtEmpresa:
-                        modo = 1;
-                        break;
-                }
-
-
-
                 LoginValidation validation = new LoginValidation();
                 validation.setActivity(LoginActivity.this);
                 validation.setEdtLogin(edtLogin);
                 validation.setEdtSenha(edtSenha);
-                validation.setRbtmodo(rbgModo);
                 validation.setLogin(login);
                 validation.setSenha(senha);
-                validation.setModo(rbgModo.getCheckedRadioButtonId());
 
-
-
-                boolean isValido = loginBO.validarCamposLogin(validation);
-                if (isValido && modo == 0){
-                    Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
-                    startActivity(i);
-                    finish(); //mata a activity atual
-                }else if (isValido && modo == 1){
-                    Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
-                    startActivity(i);
-                    finish(); //mata a activity atual
-                }
+                loginService.validarCamposLogin(validation);
             }
         });
 
@@ -115,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, PessoaActivity.class);
                 startActivity(i);
-                finish();
             }
         });
 

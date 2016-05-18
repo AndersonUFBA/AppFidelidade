@@ -27,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapaActivity extends AppCompatActivity {
 
-    private LatLng location = new LatLng(-35.035662, -51.235472);
+    private LatLng location = new LatLng(-13.0011642, -38.5095745);
 
     private GoogleMap map;
 
