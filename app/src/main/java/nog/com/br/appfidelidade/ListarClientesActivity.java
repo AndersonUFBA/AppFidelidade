@@ -15,6 +15,7 @@ public class ListarClientesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_clientes);
+
     }
     @Override //cria o menu na tela
     public boolean onCreateOptionsMenu(Menu menu){
