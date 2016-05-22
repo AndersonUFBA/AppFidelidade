@@ -3,8 +3,6 @@ package nog.com.br.appfidelidade;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,11 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        if(Build.VERSION.SDK_INT > 9){
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
 
         loginService = new LoginService();
         getSupportActionBar().hide();
@@ -86,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         btnNova.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
+                Intent i = new Intent(LoginActivity.this, PessoaActivity.class);
                 startActivity(i);
             }
         });
