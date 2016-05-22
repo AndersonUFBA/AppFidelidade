@@ -56,6 +56,46 @@ public class UsuarioDAO {
 
     }
 
+    public ArrayList<Usuario> buscarTodosUsuarios(){
+
+        ArrayList<Usuario> lista = new ArrayList<Usuario>();
+
+        SoapObject buscarUsuario = new SoapObject(NAMESPACE, BUSCAR_TODOS);
+
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+
+        envelope.setOutputSoapObject(buscarUsuario);
+
+        envelope.implicitTypes = true;
+
+        HttpTransportSE http = new HttpTransportSE(URL);
+
+        try {
+            http.call("urn:" + BUSCAR_TODOS, envelope);
+
+            Vector<SoapObject> resposta = (Vector<SoapObject>) envelope.getResponse();
+
+            for (SoapObject soapObject : resposta ) {
+                Usuario usuarioSoap = new Usuario();
+
+                usuarioSoap.setCpf(soapObject.getProperty("cpf").toString());
+                usuarioSoap.setNome(soapObject.getProperty("nome").toString());
+                usuarioSoap.setSenha(soapObject.getProperty("idade").toString());
+
+                lista.add(usuarioSoap);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return lista;
+    }
+
+
     /*public boolean atualizarUsuario(Usuario usuario){
         SoapObject atualizarUsuario = new SoapObject(NAMESPACE, ATUALIZAR);
 

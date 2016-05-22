@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         btnNova.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
+                Intent i = new Intent(LoginActivity.this, ListarPontuacaoActivity.class);
                 startActivity(i);
             }
         });

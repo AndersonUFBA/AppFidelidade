@@ -6,6 +6,9 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 import nog.com.br.appfidelidade.entidade.Empresa;
 
 /**
@@ -54,6 +57,47 @@ public class EmpresaDAO {
             return false;
         }
 
+    }
+
+    public ArrayList<Empresa> buscarTodosEmpresas(){
+
+        ArrayList<Empresa> lista = new ArrayList<Empresa>();
+
+        SoapObject buscarEmpresa = new SoapObject(NAMESPACE, BUSCAR_TODOS);
+
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+
+        envelope.setOutputSoapObject(buscarEmpresa);
+
+        envelope.implicitTypes = true;
+
+        HttpTransportSE http = new HttpTransportSE(URL);
+
+        try {
+            http.call("urn:" + BUSCAR_TODOS, envelope);
+
+            Vector<SoapObject> resposta = (Vector<SoapObject>) envelope.getResponse();
+
+            for (SoapObject soapObject : resposta ) {
+                Empresa empSoap = new Empresa();
+
+                empSoap.setCnpj(soapObject.getProperty("cnpj").toString());
+                empSoap.setDescricao(soapObject.getProperty("descricao").toString());
+                empSoap.setSenha(soapObject.getProperty("senha").toString());
+                empSoap.setLatitude(soapObject.getProperty("latitude").toString());
+                empSoap.setLongitude(soapObject.getProperty("latitude").toString());
+
+                lista.add(empSoap);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return lista;
     }
 
     /*public boolean atualizarEmpresa(Empresa empresa){

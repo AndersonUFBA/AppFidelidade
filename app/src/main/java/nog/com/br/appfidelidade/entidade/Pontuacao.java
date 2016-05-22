@@ -1,43 +1,63 @@
 package nog.com.br.appfidelidade.entidade;
 
 /**
- * Created by andersonnogueira on 10/05/16.
+ * Created by andersonnogueira on 22/05/16.
  */
 public class Pontuacao {
-    private int idPontuacao;
-    private Pessoa cliente;
-    private Pessoa Empresa;
-    private double pontuacao;
+    private int id;
+    private double pontos;
+    private String usuario_cpf;
+    private String empresa_cnpj;
 
-
-    public int getIdPontuacao() {
-        return idPontuacao;
+    public Pontuacao(){
     }
 
-    public void setIdPontuacao(int idPontuacao) {
-        this.idPontuacao = idPontuacao;
-    }
-    public Pessoa getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Pessoa cliente) {
-        this.cliente = cliente;
+    public Pontuacao(int id, double pontos, String usuario_cpf, String empresa_cnpj) {
+        this.id = id;
+        this.pontos = pontos;
+        this.usuario_cpf = usuario_cpf;
+        this.empresa_cnpj = empresa_cnpj;
     }
 
-    public double getPontuacao() {
-        return pontuacao;
+    public int getId() {
+        return id;
     }
 
-    public void setPontuacao(double pontuacao) {
-        this.pontuacao = pontuacao;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Pessoa getEmpresa() {
-        return Empresa;
+    public double getPontos() {
+        return pontos;
     }
 
-    public void setEmpresa(Pessoa empresa) {
-        Empresa = empresa;
+    public void setPontos(double pontos) {
+        this.pontos = pontos;
+    }
+
+    public String getUsuario_cpf() {
+        return usuario_cpf;
+    }
+
+    public void setUsuario_cpf(String usuario_cpf) {
+        this.usuario_cpf = usuario_cpf;
+    }
+
+    public String getEmpresa_cnpj() {
+        return empresa_cnpj;
+    }
+
+    public void setEmpresa_cnpj(String empresa_cnpj) {
+        this.empresa_cnpj = empresa_cnpj;
+    }
+
+    @Override
+    public String toString() {
+        return "Pontuacao{" +
+                "id=" + id +
+                ", pontos=" + pontos +
+                ", usuario_cpf='" + usuario_cpf + '\'' +
+                ", empresa_cnpj='" + empresa_cnpj + '\'' +
+                '}';
     }
 }
