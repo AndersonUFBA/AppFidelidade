@@ -3,7 +3,9 @@ package nog.com.br.appfidelidade;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -27,6 +29,12 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserir_pontuacao);
 
+        if(Build.VERSION.SDK_INT > 9){
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+
 
         final EditText edtCpf = (EditText) findViewById(R.id.etCpfPt);
         final EditText etCnpjPt = (EditText) findViewById(R.id.etCnpjPt);
@@ -44,7 +52,7 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PontuacaoDAO pontuacaoDAO = new PontuacaoDAO();
-                boolean resultado = pontuacaoDAO.inserirPontuacao(new Pontuacao(0, Double.parseDouble(etValor.getText().toString()),
+                boolean resultado = pontuacaoDAO.inserirPontuacao(new Pontuacao(0, Integer.parseInt(etValor.getText().toString()),
                         edtCpf.getText().toString(), etCnpjPt.getText().toString()));
 
                 if (resultado) {

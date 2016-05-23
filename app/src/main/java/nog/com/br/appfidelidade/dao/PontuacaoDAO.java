@@ -15,21 +15,22 @@ import nog.com.br.appfidelidade.entidade.Pontuacao;
  * Created by andersonnogueira on 22/05/16.
  */
 public class PontuacaoDAO {
-    private static final String URL = "http://192.168.1.100:8080/FidelidadeWS/services/UsuarioDAO?wsdl";
+    private static final String URL = "http://192.168.1.100:8080/FidelidadeWS/services/PontuacaoDAO";
     private static final String NAMESPACE = "http://dao.fidelidadews.com.br";
 
-    private static final String INSERIR = "inserirUsuario";
-    private static final String EXCLUIR = "excluirUsuario";
-    private static final String ATUALIZAR = "atualizarUsuario";
-    private static final String BUSCAR_TODOS = "buscarTodosUsuarios";
-    private static final String BUSCAR_POR_ID = "buscarUsuarioPorId";
+    private static final String INSERIR = "inserirPontuacao";
+    private static final String EXCLUIR = "excluirPontuacao";
+    private static final String ATUALIZAR = "atualizarPontuacao";
+    private static final String BUSCAR_TODOS = "buscarTodosPontuacao";
+    private static final String BUSCAR_POR_ID = "buscarPontuacaoPorId";
 
     public boolean inserirPontuacao(Pontuacao pontuacao){
 
         SoapObject inserirUsuario = new SoapObject(NAMESPACE, INSERIR);
 
-        SoapObject usuarioSoap = new SoapObject(NAMESPACE,"usuario");
+        SoapObject usuarioSoap = new SoapObject(NAMESPACE,"pontuacao");
         usuarioSoap.addProperty("id", pontuacao.getId());
+        usuarioSoap.addProperty("pontos", pontuacao.getPontos());
         usuarioSoap.addProperty("usuario_cpf", pontuacao.getUsuario_cpf());
         usuarioSoap.addProperty("empresa_cnpj", pontuacao.getEmpresa_cnpj());
 

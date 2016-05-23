@@ -5,14 +5,14 @@ package nog.com.br.appfidelidade.entidade;
  */
 public class Pontuacao {
     private int id;
-    private double pontos;
+    private int pontos;
     private String usuario_cpf;
     private String empresa_cnpj;
 
-    public Pontuacao(){
+    public Pontuacao() {
     }
 
-    public Pontuacao(int id, double pontos, String usuario_cpf, String empresa_cnpj) {
+    public Pontuacao(int id, int pontos, String usuario_cpf, String empresa_cnpj) {
         this.id = id;
         this.pontos = pontos;
         this.usuario_cpf = usuario_cpf;
@@ -27,11 +27,11 @@ public class Pontuacao {
         this.id = id;
     }
 
-    public double getPontos() {
+    public int getPontos() {
         return pontos;
     }
 
-    public void setPontos(double pontos) {
+    public void setPontos(int pontos) {
         this.pontos = pontos;
     }
 

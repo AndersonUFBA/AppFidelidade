@@ -66,7 +66,7 @@
         style="@style/caixa_cinza"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/etValor"
         android:layout_gravity="center_horizontal" />
