@@ -9,12 +9,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import nog.com.br.appfidelidade.dao.EmpresaDAO;
+import nog.com.br.appfidelidade.entidade.Empresa;
 
 public class EmpresaActivity extends AppCompatActivity {
     private Button btnListarClientes;
     private Button btnInserirPontos;
     private Button btnBonificar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +56,9 @@ public class EmpresaActivity extends AppCompatActivity {
 
 
     }
+
+
+
     @Override //cria o menu na tela
     public boolean onCreateOptionsMenu(Menu menu){
 

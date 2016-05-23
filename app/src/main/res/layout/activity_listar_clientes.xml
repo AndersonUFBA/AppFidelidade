@@ -11,11 +11,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nog.com.br.appfidelidade.ListarClientesActivity">
 
-    <TextView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nesta tela serão exibidos os clientes / pontuação"
-        android:id="@+id/textView5"
+        android:id="@+id/lvCliente"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="131dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btCadastrarNovo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
 </RelativeLayout>
