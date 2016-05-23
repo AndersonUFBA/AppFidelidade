@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 import nog.com.br.appfidelidade.entidade.Pontuacao;
+import nog.com.br.appfidelidade.entidade.PontuacaoNew;
 
 /**
  * Created by andersonnogueira on 22/05/16.
@@ -23,6 +24,8 @@ public class PontuacaoDAO {
     private static final String ATUALIZAR = "atualizarPontuacao";
     private static final String BUSCAR_TODOS = "buscarTodosPontuacao";
     private static final String BUSCAR_POR_ID = "buscarPontuacaoPorId";
+    private static final String BUSCAR_PONTUACAO_USUARIO = "buscarPontuacaoUsuario";
+
 
     public boolean inserirPontuacao(Pontuacao pontuacao){
 
@@ -83,6 +86,47 @@ public class PontuacaoDAO {
                 usuarioSoap.setId(Integer.parseInt(soapObject.getProperty("id").toString()));
                 usuarioSoap.setEmpresa_cnpj(soapObject.getProperty("empresa_cnpj").toString());
                 usuarioSoap.setUsuario_cpf(soapObject.getProperty("usuario_cnpj").toString());
+
+                lista.add(usuarioSoap);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return lista;
+    }
+
+    public ArrayList<PontuacaoNew> buscarPontuacaoUsuario(String cpf){
+
+        ArrayList<PontuacaoNew> lista = new ArrayList<PontuacaoNew>();
+
+        SoapObject buscarPontuacao = new SoapObject(NAMESPACE, BUSCAR_PONTUACAO_USUARIO);
+        buscarPontuacao.addProperty("cpf", cpf);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+
+        envelope.setOutputSoapObject(buscarPontuacao);
+
+        envelope.implicitTypes = true;
+
+        HttpTransportSE http = new HttpTransportSE(URL);
+
+        try {
+            http.call("urn:" + BUSCAR_PONTUACAO_USUARIO, envelope);
+
+            Vector<SoapObject> resposta = (Vector<SoapObject>) envelope.getResponse();
+
+            for (SoapObject soapObject : resposta ) {
+                PontuacaoNew usuarioSoap = new PontuacaoNew();
+
+                usuarioSoap.setDescricao(soapObject.getProperty("descricao").toString());
+                usuarioSoap.setPontos(Double.parseDouble(soapObject.getProperty("pontos").toString()));
+                usuarioSoap.setId(0);
+                usuarioSoap.setUsuario_cpf(cpf);
+
 
                 lista.add(usuarioSoap);
             }

@@ -39,7 +39,7 @@ public class LoginBO {
 
             loginRepository.deleteLogin(validation.getLogin(), validation.getSenha());
 
-            if (!validation.getLogin().equals("admin") || !validation.getSenha().equals("admin")){
+            if (!validation.getLogin().equals("111.111.111-11") || !validation.getSenha().equals("admin")){
                 Util.showMsgToast(validation.getActivity(), "Login/Senha inválidos!");
                 resultado = false;
             }else {

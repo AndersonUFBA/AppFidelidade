@@ -13,15 +13,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import nog.com.br.appfidelidade.dao.EmpresaDAO;
+import nog.com.br.appfidelidade.dao.PontuacaoDAO;
 import nog.com.br.appfidelidade.entidade.Empresa;
+import nog.com.br.appfidelidade.entidade.Pontuacao;
+import nog.com.br.appfidelidade.entidade.PontuacaoNew;
 
 public class ListarPontuacaoActivity extends AppCompatActivity {
 
+    EditText edtCpfPt;
     ListView lvEmpresa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +38,9 @@ public class ListarPontuacaoActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
-
+        //edtCpfPt = (EditText) findViewById(R.id.edtCpfPt);
         lvEmpresa = (ListView) findViewById(R.id.lvEmpresa);
 
-        Button btTelaCadastro = (Button) findViewById(R.id.btTelaCadastro);
-
-        btTelaCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ListarPontuacaoActivity.this, LoginActivity.class);
-            }
-        });
     }
 
     @Override
@@ -51,10 +48,10 @@ public class ListarPontuacaoActivity extends AppCompatActivity {
         super.onResume();
 
 
-        EmpresaDAO empresaDAO = new EmpresaDAO();
-        ArrayList<Empresa> lista = empresaDAO.buscarTodosEmpresas();
+        PontuacaoDAO pontuacaoDAO = new PontuacaoDAO();
+        ArrayList<PontuacaoNew> lista = pontuacaoDAO.buscarPontuacaoUsuario("111.111.111-11");
 
-        ArrayAdapter<Empresa> adapterEmpresa = new ArrayAdapter<Empresa>(this,android.R.layout.simple_list_item_1,lista);
+        ArrayAdapter<PontuacaoNew> adapterEmpresa = new ArrayAdapter<PontuacaoNew>(this,android.R.layout.simple_list_item_1,lista);
         lvEmpresa.setAdapter(adapterEmpresa);
     }
    /* @Override //cria o menu na tela
