@@ -12,6 +12,27 @@
         android:textColor="@color/branco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Cnpj"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        style="@style/caixa_cinza"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCnpjPt"
+        android:layout_gravity="center_horizontal" />
+
+
+
+
+
+
+    <TextView
+        style="@style/texto"
+        android:layout_marginTop="80px"
+        android:textColor="@color/branco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Cpf do Cliente"
         android:id="@+id/textView3"
         android:layout_gravity="center_horizontal" />
@@ -20,8 +41,16 @@
         style="@style/caixa_cinza"
         android:layout_width="363dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
+        android:id="@+id/etCpfPt"
         android:layout_gravity="center_horizontal" />
+
+
+
+
+
+
+
+
 
     <TextView
         style="@style/texto"
@@ -39,8 +68,13 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/etValor"
         android:layout_gravity="center_horizontal" />
+
+
+
+
+
 
     <Button
         style="@style/botao_azul"
@@ -48,6 +82,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Inserir Valor"
-        android:id="@+id/button" />
+        android:id="@+id/buttonPt" />
 
 </LinearLayout>

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private RadioGroup rbgModo;
     private SharedPreferences preferences;
 
-    private LoginService loginService;
+    private LoginBO loginBO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
-        loginService = new LoginService();
+        loginBO = new LoginBO(this);
         getSupportActionBar().hide();
         rbgModo = (RadioGroup) findViewById(R.id.rbgModo);
 
@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
         String login = preferences.getString("login",null);
         String senha = preferences.getString("senha", null);
-        int modo = preferences.getInt("modo", 0);
 
 
 
@@ -78,7 +77,11 @@ public class LoginActivity extends AppCompatActivity {
                 validation.setLogin(login);
                 validation.setSenha(senha);
 
-                loginService.validarCamposLogin(validation);
+
+                if (loginBO.validarCamposLogin(validation)) {
+                    Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
+                    startActivity(i);
+                }
             }
         });
 
