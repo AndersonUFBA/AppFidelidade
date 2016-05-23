@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nog.com.br.appfidelidade">
@@ -15,7 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="com.andre.mapas.MAPS_RECEIVE" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -64,7 +63,8 @@
             android:label="@string/title_activity_mapa_localizacao"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CadastrarUsuarioActivity" />
-            
+        <activity android:name=".CadastrarEmpresa" />
+        <activity android:name=".ModoActivity"></activity>
     </application>
 
 </manifest>
