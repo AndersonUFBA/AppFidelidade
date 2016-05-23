@@ -26,7 +26,7 @@ public class CadastrarEmpresa extends AppCompatActivity {
         final EditText etLatitude = (EditText) findViewById(R.id.etLat);
         final EditText etLongitude = (EditText) findViewById(R.id.etLong);
 
-        TextWatcher cnpjMask = Mask.insert("##.###.###/####-## ", edtCnpj);
+        TextWatcher cnpjMask = Mask.insert("##.###.###/####-##", edtCnpj);
         edtCnpj.addTextChangedListener(cnpjMask);
 
         Button btCadastrarEmp = (Button) findViewById(R.id.btCadastrarEmp);
