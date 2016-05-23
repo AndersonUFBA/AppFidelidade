@@ -46,6 +46,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         etNome.getText().toString()));
 
                 if (resultado){
+                    Toast.makeText(CadastrarUsuarioActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                     finish();
                 }else {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Erro no cadastro!", Toast.LENGTH_LONG).show();

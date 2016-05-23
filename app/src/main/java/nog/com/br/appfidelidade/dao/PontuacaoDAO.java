@@ -95,4 +95,36 @@ public class PontuacaoDAO {
 
         return lista;
     }
+
+    public boolean atualizarPontuacao(Pontuacao pontuacao){
+        SoapObject atualizarPontuacao = new SoapObject(NAMESPACE, ATUALIZAR);
+
+        SoapObject pontuacaoSoap = new SoapObject(NAMESPACE,"pontuacao");
+        pontuacaoSoap.addProperty("id", pontuacao.getId());
+        pontuacaoSoap.addProperty("pontos", pontuacao.getPontos());
+        pontuacaoSoap.addProperty("usuario_cpf", pontuacao.getUsuario_cpf());
+        pontuacaoSoap.addProperty("empresa_cnpj", pontuacao.getEmpresa_cnpj());
+
+        atualizarPontuacao.addSoapObject(pontuacaoSoap);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+
+        envelope.setOutputSoapObject(atualizarPontuacao);
+
+        envelope.implicitTypes = true;
+
+        HttpTransportSE http = new HttpTransportSE(URL);
+
+        try {
+            http.call("urn:" + ATUALIZAR, envelope);
+
+            SoapPrimitive resposta = (SoapPrimitive) envelope.getResponse();
+            return Boolean.parseBoolean(resposta.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }

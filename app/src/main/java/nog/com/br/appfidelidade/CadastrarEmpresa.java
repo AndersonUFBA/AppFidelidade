@@ -26,7 +26,7 @@ public class CadastrarEmpresa extends AppCompatActivity {
         final EditText etLatitude = (EditText) findViewById(R.id.etLat);
         final EditText etLongitude = (EditText) findViewById(R.id.etLong);
 
-        TextWatcher cnpjMask = Mask.insert("##.###.###/####-## ", edtCnpj);
+        TextWatcher cnpjMask = Mask.insert("##.###.###/####-##", edtCnpj);
         edtCnpj.addTextChangedListener(cnpjMask);
 
         Button btCadastrarEmp = (Button) findViewById(R.id.btCadastrarEmp);
@@ -39,6 +39,7 @@ public class CadastrarEmpresa extends AppCompatActivity {
                         etDescricao.getText().toString(), etLatitude.getText().toString(), etLongitude.getText().toString()));
 
                 if (resultado) {
+                    Toast.makeText(CadastrarEmpresa.this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
                     Toast.makeText(CadastrarEmpresa.this, "Erro no cadastro!", Toast.LENGTH_LONG).show();
