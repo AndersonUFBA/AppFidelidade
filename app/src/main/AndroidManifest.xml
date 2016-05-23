@@ -64,7 +64,7 @@
             android:label="@string/title_activity_mapa_localizacao"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CadastrarUsuarioActivity" />
-        <activity android:name=".CadastrarEmpresa"></activity>
+            
     </application>
 
 </manifest>
