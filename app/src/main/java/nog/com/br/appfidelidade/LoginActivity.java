@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import nog.com.br.appfidelidade.async.AsyncUsuario;
 import nog.com.br.appfidelidade.bo.LoginBO;
 import nog.com.br.appfidelidade.entidade.Modo;
 import nog.com.br.appfidelidade.service.LoginService;
+import nog.com.br.appfidelidade.util.Mask;
 import nog.com.br.appfidelidade.validation.LoginValidation;
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,8 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edtLogin;
     private EditText edtSenha;
-
-
+    private TextWatcher cpfMask;
     private Button btnLogar, btnNova;
     private RadioGroup rbgModo;
     private SharedPreferences preferences;
@@ -59,6 +60,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
         edtLogin = (EditText) findViewById(R.id.edtLogin);
+        cpfMask = Mask.insert("###.###.###-##", edtLogin);
+        edtLogin.addTextChangedListener(cpfMask);
+
+
+
+
         edtSenha = (EditText) findViewById(R.id.edtSenha);
 
 
