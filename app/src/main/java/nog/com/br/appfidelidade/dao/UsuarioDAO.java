@@ -81,7 +81,7 @@ public class UsuarioDAO {
 
                 usuarioSoap.setCpf(soapObject.getProperty("cpf").toString());
                 usuarioSoap.setNome(soapObject.getProperty("nome").toString());
-                usuarioSoap.setSenha(soapObject.getProperty("idade").toString());
+                usuarioSoap.setSenha(soapObject.getProperty("senha").toString());
 
                 lista.add(usuarioSoap);
             }
