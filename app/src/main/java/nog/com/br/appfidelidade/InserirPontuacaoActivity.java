@@ -54,7 +54,7 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
                 PontuacaoDAO pontuacaoDAO = new PontuacaoDAO();
                 boolean resultado = pontuacaoDAO.inserirPontuacao(new Pontuacao(0, Integer.parseInt(etValor.getText().toString()),
                         edtCpf.getText().toString(), etCnpjPt.getText().toString()));
-
+                Toast.makeText(InserirPontuacaoActivity.this, "Operação realizada com sucesso!", Toast.LENGTH_LONG).show();
                 if (resultado) {
                     finish();
                 } else {

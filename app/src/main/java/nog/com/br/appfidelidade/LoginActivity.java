@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        rbgModo = (RadioGroup) findViewById(R.id.rbgModo);
 
         if(Build.VERSION.SDK_INT > 9){
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -79,8 +80,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (loginBO.validarCamposLogin(validation)) {
-                    Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
-                    startActivity(i);
+                    if (rbgModo.getCheckedRadioButtonId() == R.id.rbtEmpresa){
+                        Intent i = new Intent(LoginActivity.this, EmpresaActivity.class);
+                        startActivity(i);
+                    }else {
+                        Intent i = new Intent(LoginActivity.this, ClienteActivity.class);
+                        startActivity(i);
+                    }
+
                 }
             }
         });
@@ -89,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         btnNova.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(LoginActivity.this, ListarPontuacaoActivity.class);
                 startActivity(i);
             }
