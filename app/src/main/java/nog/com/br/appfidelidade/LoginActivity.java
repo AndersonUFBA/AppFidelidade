@@ -35,10 +35,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edtLogin;
     private EditText edtSenha;
-    private TextWatcher cpfMask;
+    private TextWatcher cpfMask, cnpjMask;
     private Button btnLogar, btnNova;
     private RadioGroup rbgModo;
+    private RadioButton rbtCliente;
     private SharedPreferences preferences;
+    private int modoSelecionado;
 
     private LoginBO loginBO;
 
@@ -53,9 +55,33 @@ public class LoginActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
+        edtLogin = (EditText) findViewById(R.id.edtLogin);
+        cpfMask = Mask.insert("###.###.###-##", edtLogin);
+        edtLogin.addTextChangedListener(cpfMask);
+
+        cnpjMask = Mask.insert("##.###.###/####-##", edtLogin);
+
+        rbgModo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                edtLogin.setText("");
+                edtLogin.requestFocus();
+                modoSelecionado = group.getCheckedRadioButtonId();
+
+                if (modoSelecionado == rbtCliente.getId()){
+                    edtLogin.removeTextChangedListener(cnpjMask);
+                    edtLogin.addTextChangedListener(cpfMask);
+                }else {
+                    edtLogin.removeTextChangedListener(cpfMask);
+                    edtLogin.addTextChangedListener(cnpjMask);
+                }
+            }
+        });
+
         loginBO = new LoginBO(this);
         getSupportActionBar().hide();
         rbgModo = (RadioGroup) findViewById(R.id.rbgModo);
+        rbtCliente = (RadioButton) findViewById(R.id.rbtCliente);
 
         preferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
 
@@ -64,9 +90,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        edtLogin = (EditText) findViewById(R.id.edtLogin);
-        cpfMask = Mask.insert("###.###.###-##", edtLogin);
-        edtLogin.addTextChangedListener(cpfMask);
 
 
 
