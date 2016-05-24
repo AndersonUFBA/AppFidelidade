@@ -42,6 +42,20 @@ public class LoginRepository extends SQLiteOpenHelper{
         query.append(" CNPJ_VEND TEXT(14),");
         query.append(" PONTUACAO DOUBLE)");
 
+       query.append("  INSERT INTO TB_PESSOA");
+        query.append(" (NOME , LATITUDE, LONGITUDE) ");
+        query.append("  VALUES (Teste1,-13.001904,-38.507229)");
+
+        query.append("  INSERT INTO TB_PESSOA");
+        query.append(" (NOME , LATITUDE, LONGITUDE) ");
+        query.append("  VALUES (Teste2,-13.001004,-38.506829)");
+
+        query.append("  INSERT INTO TB_PESSOA");
+        query.append(" (NOME , LATITUDE, LONGITUDE) ");
+        query.append("  VALUES (Teste2,-14.001004,-38.506829)");
+
+
+
         db.execSQL(query.toString());
         popularBD(db);
 
@@ -55,7 +69,6 @@ public class LoginRepository extends SQLiteOpenHelper{
     private void popularBD(SQLiteDatabase db){
         StringBuilder query = new StringBuilder();
         query.append("INSERT INTO TB_LOGIN(USUARIO, SENHA) VALUES(?,?)");
-
 
         db.execSQL(query.toString(), new String[] {"admin","admin"});
 
