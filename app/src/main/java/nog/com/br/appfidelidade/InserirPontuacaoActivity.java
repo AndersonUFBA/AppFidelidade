@@ -43,7 +43,7 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
         cpfMask = Mask.insert("###.###.###-##", edtCpf);
         edtCpf.addTextChangedListener(cpfMask);
 
-        TextWatcher cnpjMask = Mask.insert("##.###.###/####-## ", etCnpjPt);
+        TextWatcher cnpjMask = Mask.insert("##.###.###/####-##", etCnpjPt);
         etCnpjPt.addTextChangedListener(cnpjMask);
 
         Button btCastrarUsr = (Button) findViewById(R.id.buttonPt);
