@@ -49,6 +49,7 @@ public class LoginBO {
                 editor.putInt("modo",validation.getModo());
 
 
+
                 editor.commit();
             }
         }

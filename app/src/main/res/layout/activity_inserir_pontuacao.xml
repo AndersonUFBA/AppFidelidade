@@ -20,7 +20,8 @@
         android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:id="@+id/etCnpjPt"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:inputType="number"/>
 
 
 
@@ -42,7 +43,8 @@
         android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:id="@+id/etCpfPt"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:inputType="number"/>
 
 
 

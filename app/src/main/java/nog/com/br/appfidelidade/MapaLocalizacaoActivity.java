@@ -2,6 +2,8 @@ package nog.com.br.appfidelidade;
 
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
@@ -15,6 +17,10 @@ import android.widget.TextView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+
+import nog.com.br.appfidelidade.entidade.Empresa;
+import nog.com.br.appfidelidade.repository.LoginRepository;
+import nog.com.br.appfidelidade.validation.LoginValidation;
 
 
 public class MapaLocalizacaoActivity extends AppCompatActivity
@@ -66,8 +72,20 @@ public class MapaLocalizacaoActivity extends AppCompatActivity
 
         if(l != null){
             Log.i("LOG", "latitude: "+l.getLatitude());
-            Log.i("LOG", "longitude: "+l.getLongitude());
-            tvCoordinate.setText(l.getLatitude()+" | "+l.getLongitude());
+            Log.i("LOG", "longitude: " + l.getLongitude());
+            tvCoordinate.setText(l.getLatitude() + " | " + l.getLongitude());
+
+            LoginValidation validation = new LoginValidation();
+
+            SharedPreferences.Editor editor = validation.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE).edit();
+
+
+            editor.putFloat("lat", (float) l.getLatitude());
+            editor.putFloat("lgt", (float) l.getLongitude());
+
+
+            editor.commit();
+
         }
     }
 
