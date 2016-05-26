@@ -19,32 +19,4 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="131dp" />
 
-   <!-- <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/txtCpf"
-        style="@style/texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CPF:" />
-
-    <EditText
-        style="@style/caixa_cinza"
-        android:id="@+id/edtCpfPt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_below="@+id/txtCpf"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />-->
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Listar"
-        android:id="@+id/btLs"
-        android:layout_below="@+id/edtCpfPt"
-        android:layout_centerHorizontal="true" />
-
-
 </RelativeLayout>
