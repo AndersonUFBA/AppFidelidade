@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private RadioButton rbtCliente;
     private SharedPreferences preferences;
     private int modoSelecionado;
+    private ImageView imageView;
 
     private LoginBO loginBO;
 
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
+        imageView = (ImageView) findViewById(R.id.imageView);
         edtLogin = (EditText) findViewById(R.id.edtLogin);
         cpfMask = Mask.insert("###.###.###-##", edtLogin);
         edtLogin.addTextChangedListener(cpfMask);

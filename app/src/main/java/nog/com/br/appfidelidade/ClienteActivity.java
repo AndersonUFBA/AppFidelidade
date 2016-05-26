@@ -24,15 +24,11 @@ public class ClienteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente);
-
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setHomeButtonEnabled(true);
-       // getSupportActionBar().setTitle("Bem vindo!");
         btnMapa = (Button) findViewById(R.id.btnMapa);
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ClienteActivity.this, MapaLocalizacaoActivity.class);
+                Intent i = new Intent(ClienteActivity.this, MapsActivity.class);
                 startActivity(i);
 
             }
@@ -41,7 +37,7 @@ public class ClienteActivity extends AppCompatActivity {
         btnMapa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ClienteActivity.this, MapaActivity.class);
+                Intent i = new Intent(ClienteActivity.this, MapsActivity.class);
                 startActivity(i);
 
             }
