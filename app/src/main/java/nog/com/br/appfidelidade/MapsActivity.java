@@ -1,9 +1,12 @@
 package nog.com.br.appfidelidade;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
@@ -18,7 +21,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 
 
 public class MapsActivity extends FragmentActivity implements
@@ -116,10 +118,10 @@ public class MapsActivity extends FragmentActivity implements
         final double v = greatCircleInKilometers(-12.9704, -38.5124, -12.92, -38.5);
 
         //mMap.addMarker(new MarkerOptions().position(new LatLng(i, i)).title("Instituição " + i));
-        LatLng latLng = new LatLng(-12.9704, -38.5124);
+        LatLng latLng = new LatLng(-12.9163049, -38.432670);
         MarkerOptions options = new MarkerOptions()
                 .position(latLng)
-                .title(String.valueOf("Instituição X - Distância: " + String.format("%.2f", v)) + "km");
+                .title(String.valueOf("Pizza Hut - Distância: " + String.format("%.2f", v)) + "km");
         mMap.addMarker(options);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -130,10 +132,10 @@ public class MapsActivity extends FragmentActivity implements
             }
         });
 
-        LatLng latLng2 = new LatLng(-12.92, -38.5);
+        LatLng latLng2 = new LatLng(-13.0053415, -38.5102894);
         MarkerOptions options2 = new MarkerOptions()
                 .position(latLng2)
-                .title(String.valueOf("Instituição X - Distância: " + String.format("%.2f", v)) + "km");
+                .title(String.valueOf("Ricardo Eletron - Distância: " + String.format("%.2f", v)) + "km");
         mMap.addMarker(options2);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng2));
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -163,6 +165,16 @@ public class MapsActivity extends FragmentActivity implements
 
     @Override
     public void onConnected(Bundle bundle) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (location == null) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);

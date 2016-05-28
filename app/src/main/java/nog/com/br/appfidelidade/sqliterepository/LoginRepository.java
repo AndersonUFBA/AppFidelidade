@@ -1,4 +1,4 @@
-package nog.com.br.appfidelidade.repository;
+package nog.com.br.appfidelidade.sqliterepository;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -67,12 +67,7 @@ public class LoginRepository extends SQLiteOpenHelper{
 
 
         while (cursor.moveToNext()) {
-            /*exemplo para exibir no terminal do logcat
-            Log.d("ID do usuário: ",String.valueOf(cursor.getInt(cursor.getColumnIndex("ID_LOGIN"))));//CHAMANDO PELO NOME DA COLUNA
-            Log.d("Nome de usuário: ",cursor.getString(1));//CHAMANDO PELA POSIÇAO DA COLUNA
-            Log.d("Senha do usuário: ",cursor.getString(cursor.getColumnIndex("SENHA")));//CHAMANDO PELO NOME DA COLUNA*/
 
-            //exemplo para exibir no app
             String txt = "ID do usuário: " + String.valueOf(cursor.getInt(cursor.getColumnIndex("ID_LOGIN")));
             Util.showMsgToast(activity, txt);
 

@@ -66,8 +66,8 @@ public class PontuacaoNew {
 
     @Override
     public String toString() {
-        return " Descricao=" + descricao
-                + ", pontos=" + pontos + "]";
+        return " Empresa=" + descricao
+                + ", R$ " + String.format("%.2f",pontos);
     }
 
 

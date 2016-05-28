@@ -44,10 +44,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "cpf='" + cpf + '\'' +
-                ", senha='" + senha + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
+        return "Usuario = "  + nome +
+                "cpf='" + cpf ;
     }
 }

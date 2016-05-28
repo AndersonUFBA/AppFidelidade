@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nog.com.br.appfidelidade.entidade.Pessoa;
-import nog.com.br.appfidelidade.repository.PessoaRepository;
+import nog.com.br.appfidelidade.sqliterepository.PessoaRepository;
 
 public class ListaPessoaActivity extends AppCompatActivity {
 

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import nog.com.br.appfidelidade.repository.LoginRepository;
+import nog.com.br.appfidelidade.sqliterepository.LoginRepository;
 import nog.com.br.appfidelidade.util.Util;
 import nog.com.br.appfidelidade.validation.LoginValidation;
 
