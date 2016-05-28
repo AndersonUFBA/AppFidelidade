@@ -1,4 +1,4 @@
-package nog.com.br.appfidelidade.repository;
+package nog.com.br.appfidelidade.sqliterepository;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

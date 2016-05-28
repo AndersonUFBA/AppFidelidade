@@ -37,14 +37,14 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
 
 
         final EditText edtCpf = (EditText) findViewById(R.id.etCpfPt);
-        final EditText etCnpjPt = (EditText) findViewById(R.id.etCnpjPt);
+        //final EditText etCnpjPt = (EditText) findViewById(R.id.etCnpjPt);
         final EditText etValor = (EditText) findViewById(R.id.etValor);
 
         cpfMask = Mask.insert("###.###.###-##", edtCpf);
         edtCpf.addTextChangedListener(cpfMask);
 
-        TextWatcher cnpjMask = Mask.insert("##.###.###/####-##", etCnpjPt);
-        etCnpjPt.addTextChangedListener(cnpjMask);
+        /*TextWatcher cnpjMask = Mask.insert("##.###.###/####-##", etCnpjPt);
+        etCnpjPt.addTextChangedListener(cnpjMask);*/
 
         Button btCastrarUsr = (Button) findViewById(R.id.buttonPt);
 
@@ -53,7 +53,7 @@ public class InserirPontuacaoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PontuacaoDAO pontuacaoDAO = new PontuacaoDAO();
                 boolean resultado = pontuacaoDAO.inserirPontuacao(new Pontuacao(0, Integer.parseInt(etValor.getText().toString()),
-                        edtCpf.getText().toString(), etCnpjPt.getText().toString()));
+                        edtCpf.getText().toString(), "11.111.111/1111-11"));
 
                 if (resultado) {
                     Toast.makeText(InserirPontuacaoActivity.this, "Operação realizada com sucesso!", Toast.LENGTH_LONG).show();

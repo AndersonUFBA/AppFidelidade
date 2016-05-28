@@ -1,29 +1,18 @@
 package nog.com.br.appfidelidade;
 
-         import android.app.DatePickerDialog;
-        import android.content.Intent;
+         import android.content.Intent;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.text.TextWatcher;
         import android.view.View;
-        import android.widget.ArrayAdapter;
-        import android.widget.DatePicker;
-        import android.widget.EditText;
+         import android.widget.EditText;
         import android.widget.RadioButton;
         import android.widget.RadioGroup;
-        import android.widget.Spinner;
-        import android.widget.TextView;
-
-        import java.text.DateFormat;
-        import java.text.ParseException;
-        import java.text.SimpleDateFormat;
-        import java.util.ArrayList;
-        import java.util.Calendar;
-        import java.util.Date;
+         import android.widget.TextView;
 
          import nog.com.br.appfidelidade.entidade.Pessoa;
          import nog.com.br.appfidelidade.entidade.TipoPessoa;
-         import nog.com.br.appfidelidade.repository.PessoaRepository;
+         import nog.com.br.appfidelidade.sqliterepository.PessoaRepository;
          import nog.com.br.appfidelidade.util.Mask;
          import nog.com.br.appfidelidade.util.Util;
 

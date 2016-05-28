@@ -33,15 +33,7 @@ public class ClienteActivity extends AppCompatActivity {
 
             }
         });
-        btnMapa2 = (Button) findViewById(R.id.btnMapa2);
-        btnMapa2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ClienteActivity.this, MapsActivity.class);
-                startActivity(i);
 
-            }
-        });
 
          btnListPonto  = (Button) findViewById(R.id.btnListPonto);
          btnListPonto.setOnClickListener(new View.OnClickListener() {

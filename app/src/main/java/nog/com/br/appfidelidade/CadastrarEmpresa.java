@@ -36,7 +36,8 @@ public class CadastrarEmpresa extends AppCompatActivity {
                 EmpresaDAO empresaDAO = new EmpresaDAO();
                 boolean resultado = empresaDAO.inserirEmpresa(new Empresa(edtCnpj.getText().toString(),
                         etSenha.getText().toString(),
-                        etDescricao.getText().toString(), etLatitude.getText().toString(), etLongitude.getText().toString()));
+                        etDescricao.getText().toString(), Double.parseDouble(etLatitude.getText().toString()),
+                        Double.parseDouble(etLongitude.getText().toString())));
 
                 if (resultado) {
                     Toast.makeText(CadastrarEmpresa.this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();

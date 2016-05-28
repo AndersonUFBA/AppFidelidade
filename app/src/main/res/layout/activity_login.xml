@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
-    android:background="@drawable/background"
+
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -29,7 +29,7 @@
         android:src="@drawable/logo123"/>
 
     <TextView
-        android:textColor="@color/branco"
+        android:textColor="@color/cinza"
         style="@style/Txt_Teste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
 
     <TextView
         style="@style/Txt_Teste"
-        android:textColor="@color/branco"
+        android:textColor="@color/cinza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lbl_senha" />
@@ -59,7 +59,7 @@
         android:inputType="textPassword" />
 
     <TextView
-        android:textColor="@color/branco"
+        android:textColor="@color/cinza"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,14 +73,14 @@
         android:id="@+id/rbgModo">
 
         <RadioButton
-            android:textColor="@color/branco"
+            android:textColor="@color/cinza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cliente"
             android:id="@+id/rbtCliente"
             android:checked="true"/>
         <RadioButton
-            android:textColor="@color/branco"
+            android:textColor="@color/cinza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Empresa"

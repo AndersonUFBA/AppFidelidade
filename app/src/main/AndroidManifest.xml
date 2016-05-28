@@ -31,15 +31,12 @@ package="nog.com.br.appfidelidade">
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:name=".ClienteActivity" />
     <activity android:name=".ListarPontuacaoActivity" />
-    <activity android:name=".MapaActivity" />
     <activity android:name=".EmpresaActivity" />
     <activity android:name=".ListarClientesActivity" />
     <activity android:name=".BonificacaoActivity" />
     <activity android:name=".InserirPontuacaoActivity" />
     <activity android:name=".PessoaActivity" />
     <activity android:name=".ListaPessoaActivity" />
-    <activity android:name=".MapaLocalizacaoActivity"
-        android:theme="@style/AppTheme.NoActionBar" />
     <activity android:name=".CadastrarUsuarioActivity" />
     <activity android:name=".CadastrarEmpresa" />
     <activity android:name=".ModoActivity"></activity>

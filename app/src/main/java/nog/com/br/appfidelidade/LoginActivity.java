@@ -1,33 +1,21 @@
 package nog.com.br.appfidelidade;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.StrictMode;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 
-import java.util.ArrayList;
-
-import nog.com.br.appfidelidade.async.AsyncUsuario;
 import nog.com.br.appfidelidade.bo.LoginBO;
-import nog.com.br.appfidelidade.entidade.Modo;
-import nog.com.br.appfidelidade.service.LoginService;
 import nog.com.br.appfidelidade.util.Mask;
 import nog.com.br.appfidelidade.validation.LoginValidation;
 
